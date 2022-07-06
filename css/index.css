@@ -7,40 +7,60 @@
 body {
     display: flex;
     flex-direction: column;
-    text-align: center;
     background-color: rgb(197 161 120 / 85%);
+    text-align: left;
 }
 
 .wrapper {
-    max-width: 65%;
-    margin-left: 17.5%;
+    max-width: 40%;
+    margin-left: 30%;
     margin-top: 2em;
     background-color: rgb(225 212 197 / 48%);
     border-radius: 1em;
+    box-shadow: 2px 3px 15px 5px rgba(31, 17, 17, 0.459);
 }
 
 .title {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 60px;
-    color: rgb(31, 10, 10);
+    color: rgba(31, 10, 10, 0.85);
+    text-align: center;
+}
+
+.title a, .title a:visited {
+    text-decoration: none;
+    color: inherit;
 }
 
 .input-window {
+    box-sizing: border-box;
     width: 100%;
     height: 1.5em;
     font-size: 20px;
     margin-bottom: 2em;
     border-radius: 5px;
-    border-color: rgba(31, 17, 17, 0.616);
     border: none;
     box-shadow: 2px 3px 15px 5px rgba(31, 17, 17, 0.459);
+}
+
+.input-window:focus {
+    outline:none;
+    padding-left: 0.5em;
 }
 
 .input-window::placeholder {
     padding-left: 0.5em;
     color: rgba(31, 17, 17, 0.723);
     font-style: italic;
+}
+
+.input-window:focus::placeholder {
+    color: transparent;
+}
+
+.doings-list {
+    margin-bottom: 1em;
 }
 
 .wrapper-content {
@@ -53,21 +73,16 @@ ul {
 }
 
 .element-of-list {
+    display: flex;
+    justify-content: space-between;
     border: 1px solid rgba(31, 17, 17, 0.58);
     max-width: 100%;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
     border-radius: 5px;
     background-color: rgb(233 226 220);
 }
 
-.element-content {
-    text-align: start;
-}
-
 .checked-doings {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
     width: 1.5em;
     height: 1.5em;
     flex-shrink: 0;
@@ -78,39 +93,28 @@ ul {
     background-size: 50% 50%;
 }
 
-label::before {
-    content: '';
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid rgba(31, 17, 17, 0.58);
-    border-radius: 50%;
-    margin-left: 5px;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
+label {
+    font-size: 28px;
+    overflow: clip;
 }
 
 .delete-doing {
-    height: 25px;
-    width: 25px;
+    height: 23px;
+    width: 23px;
     border: 0; 
     outline: none; 
     background-color: transparent;
-    padding-top: 4px;
-    padding-left: 75%;
+    cursor: pointer;
+    background-image: url(../img/x_icon.png);
+    background-size: 100%;
+    margin-right: 5px;
+    margin-top: 4px;
 }
 
-button img {
-    max-width: 25px;
-}
 
 .filter {
-    max-width: 50%;
-    margin-left: 25%;
+    max-width: 70%;
+    margin-left: 15%;
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -124,21 +128,45 @@ button img {
     border-radius: 50%;
     border: none;
     font-weight: 600;
+    cursor: pointer;
+}
+
+.filter button:hover, .filter button:focus {
+    outline: none;
+    background-color: rgb(255, 255, 255);
 }
 
 .pagination {
+    border: 0.5px solid rgba(31, 17, 17, 0.51);
+    border-radius: 0.7em;
     max-width: fit-content;
     margin: 0 auto;
-    font-size: 20px;
     display: flex;
     flex-direction: row;
     margin-bottom: 1em;
+    background-color: rgb(222 184 135 / 42%);
 }
 
 .pagination a {
     text-decoration: none;
-    color: rgba(31, 17, 17, 0.723);
-    border: 1px solid rgba(31, 17, 17, 0.856);
-    font-size: 25px;
+    color: rgba(31, 17, 17, 0.81);
+    border-right: 0.5px solid rgba(31, 17, 17, 0.48);
+    font-size: 22px;
     padding: 0 5px;
+    padding-top: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pagination a:last-child {
+    border: none;
+    color: rgba(31, 17, 17, 0.61);
+}
+
+.pagination a:first-child {
+    color: rgba(31, 17, 17, 0.61);
+}
+
+.pagination a:hover, .pagination a:focus{
+    outline: none;
+    color: black;
 }
