@@ -5,10 +5,7 @@ const pagination = document.querySelector('footer');
 const filterBlock = document.querySelector('.filter');
 const deleteButton = document.querySelector('.delete-doing');
 
-
 let doingsList = [];
-const size = 4;
-let currentPage = 1;
 
 const displayDoing = () => {
     let doingsElements = '';
@@ -42,6 +39,8 @@ const displayDoing = () => {
             <button class="doneElements">Done</button>
             <button class="undoneElements">Undone</button>
         `
+    } else {
+        filterBlock.innerHTML = '';
     };
 };
 
@@ -68,32 +67,11 @@ list.addEventListener('click', (event) => {
         const targetParent = event.target.parentElement;
         const targetParentId = targetParent.id;
 
-        console.log(targetParent);
-
-        if (targetParentId == targetIndex) {
+        if (targetParentId === targetIndex) {
             targetParent.outerHTML = '';
+            doingsList.splice(targetIndex, 1);
+            displayDoing ();
         }
     };
     localStorage.setItem('doingsList', JSON.stringify(doingsList));
 });
-
-// if (doingsList.length > 0) {
-//     const deleteButtons = document.getElementsByClassName('delete-doing');
-//     console.log(deleteButtons);
-//     const button = [];
-    
-//     doingsList.forEach((item) => {
-//         button.push(deleteButtons[item]);
-//     });
-
-//     console.log(button);
-    
-//     button.forEach((item) => {
-//         document.addEventListener('click', (event) => {
-//         if (event.target === item) {
-//             console.log(1);
-//             event.target.parentElement = '';
-//         }
-//     });
-//     })
-// };
