@@ -38,7 +38,7 @@ body {
     width: 100%;
     height: 1.5em;
     font-size: 20px;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     border-radius: 5px;
     border: none;
     box-shadow: 2px 3px 15px 5px rgba(31, 17, 17, 0.459);
@@ -59,6 +59,30 @@ body {
     color: transparent;
 }
 
+.dataSort {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.dataSort .up {
+    background-image: url(../img/2931161_arrow_top_up_direction_move_icon.png);
+    background-size: 100%;
+    background-color: inherit;
+}
+
+.dataSort .down {
+    background-image: url(../img/2931160_down_direction_download_pointer_arrow_icon.png);
+    background-size: 100%;
+    background-color: inherit;
+}
+
+.dataSort button {
+    width: 1.5em;
+    height: 1.5em;
+    border: none;
+    cursor: pointer;
+}
+
 .doings-list {
     margin-bottom: 1em;
 }
@@ -66,6 +90,7 @@ body {
 .wrapper-content {
     width: 70%;
     margin-left: 15%;
+    text-align: center;
 }
 
 ul {
@@ -80,6 +105,10 @@ ul {
     margin-bottom: 0.5em;
     border-radius: 5px;
     background-color: rgb(233 226 220);
+}
+
+.element-of-list span {
+    margin-top: 0.5em;
 }
 
 .checked-doings {
